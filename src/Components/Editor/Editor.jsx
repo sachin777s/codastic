@@ -5,6 +5,7 @@ import { DiHtml5 } from "react-icons/di";
 import { IoLogoCss3 } from "react-icons/io";
 import { IoLogoJavascript } from 'react-icons/io';
 import LanguageContext from '../../context/LanguageContext/LanaugeContext';
+import { Resizable } from 're-resizable';
 
 export default function Editor() {
 
@@ -24,7 +25,13 @@ export default function Editor() {
     }
 
     return (
-        <div className='editor'>
+        <Resizable
+            defaultSize={{
+                width: "50%",
+                height: "calc(100vh - 95px)",
+            }}
+            className='editor'
+        >
             <div className='editor-menu'>
                 {
                     languages.map((singleLanguage, i) =>
@@ -52,6 +59,6 @@ export default function Editor() {
                     onChange={handleEditorChange}
                 />
             </div>
-        </div>
+        </Resizable>
     )
 }

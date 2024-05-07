@@ -1,18 +1,23 @@
-.editor{
-    width: 50%;
+.editor {
+  width: 50%;
+  min-width: 324px;
+  max-width: 70vw;
+  border-right: 4px solid #ffffff;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
-.editor-menu{
+.editor-menu {
   display: flex;
-  align-items: center;  
+  align-items: center;
   width: 100%;
   background-color: #3d3d3f;
 }
 
-.editor-menu-item{
-    display: flex;
-    align-items: center;
-    gap: 0.2rem;
-    padding: 8px 20px;
-    cursor: pointer;
+.editor-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 8px 20px;
+  cursor: pointer;
 }

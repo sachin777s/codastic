@@ -1,0 +1,23 @@
+.output {
+    min-width: 324px;
+    width: 50%;
+    max-width: 70vw;
+    height: calc(100vh - 44px);
+    background-color: aqua;
+}
+
+.output-header {
+    height: 34px;
+    width: 100%;
+    background-color: #dbd6e8;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.output-area {
+    width: 100%;
+    height: calc(100% - 34px);
+    background-color: #fff;
+}

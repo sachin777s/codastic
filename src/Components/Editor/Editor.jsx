@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./Editor.css"
 import MonacoEditor from '@monaco-editor/react';
 import { DiHtml5 } from "react-icons/di";
@@ -9,7 +9,8 @@ import { Resizable } from 're-resizable';
 
 export default function Editor() {
 
-    const { value, setValue } = useContext(LanguageContext);
+    const { html, setHtml, setCss, setJavascript } = useContext(LanguageContext);
+    const values = useContext(LanguageContext);
     const [language, setLanguage] = useState("html");
     const languages = [
         { language: "html", label: "HTML", icon: <DiHtml5 size={20} /> },
@@ -19,10 +20,15 @@ export default function Editor() {
 
     //Editor value change handler
     const handleEditorChange = (editorValue, event) => {
-        const temp = value;
-        temp[language] = editorValue;
-        setValue(temp);
+        if (language === "html") {
+            setHtml(editorValue);
+        } else if (language === "css") {
+            setCss(editorValue);
+        } else {
+            setJavascript(editorValue)
+        }
     }
+
 
     return (
         <Resizable
@@ -53,8 +59,8 @@ export default function Editor() {
                     width="100%"
                     defaultLanguage="html"
                     language={language}
-                    defaultValue={value[language]}
-                    value={value[language]}
+                    defaultValue={html}
+                    value={values[language]}
                     theme='vs-dark'
                     onChange={handleEditorChange}
                 />

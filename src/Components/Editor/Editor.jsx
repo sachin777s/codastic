@@ -4,8 +4,8 @@ import MonacoEditor from '@monaco-editor/react';
 import { DiHtml5 } from "react-icons/di";
 import { IoLogoCss3 } from "react-icons/io";
 import { IoLogoJavascript } from 'react-icons/io';
+import { RiFullscreenFill, RiFullscreenExitLine } from "react-icons/ri"
 import LanguageContext from '../../context/LanguageContext/LanaugeContext';
-import { Resizable } from 're-resizable';
 
 export default function Editor() {
 
@@ -18,6 +18,8 @@ export default function Editor() {
         { language: "javascript", label: "Javascript", icon: <IoLogoJavascript size={20} /> }
     ]
 
+    const [isFullScreen, setIsFullScreen] = useState(false);
+
     //Editor value change handler
     const handleEditorChange = (editorValue, event) => {
         if (language === "html") {
@@ -29,15 +31,16 @@ export default function Editor() {
         }
     }
 
+    //Full Screen Handling
+    const handleFullScreen = () => {
+        setIsFullScreen(!isFullScreen);
+        const editor = document.querySelector(".editor");
+        editor.classList.toggle("full-screen")
+    }
+
 
     return (
-        <Resizable
-            defaultSize={{
-                width: "50%",
-                height: "calc(100vh - 95px)",
-            }}
-            className='editor'
-        >
+        <div className='editor'>
             <div className='editor-menu'>
                 {
                     languages.map((singleLanguage, i) =>
@@ -52,10 +55,20 @@ export default function Editor() {
                         </div>
                     )
                 }
+                <div
+                    className='is-full-screen-icon'
+                    onClick={handleFullScreen}
+                >
+                    {
+                        isFullScreen
+                            ? <RiFullscreenExitLine z={-1} size={20} />
+                            : <RiFullscreenFill size={20} />
+                    }
+                </div>
             </div>
-            <div>
+            <div style={{ height: "100%" }}>
                 <MonacoEditor
-                    height="calc(100vh - 95px)"
+                    height="100%"
                     width="100%"
                     defaultLanguage="html"
                     language={language}
@@ -65,6 +78,6 @@ export default function Editor() {
                     onChange={handleEditorChange}
                 />
             </div>
-        </Resizable>
+        </div>
     )
 }

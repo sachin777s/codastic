@@ -16,7 +16,10 @@ body {
     background-image: linear-gradient(to left, #07052e, #1c002a);
 }
 
-.main{
+.main {
     margin: 1rem 1rem 0 1rem;
     display: flex;
+    align-items: center;
+    gap: 10px;
+    height: calc(100vh - 100px);
 }

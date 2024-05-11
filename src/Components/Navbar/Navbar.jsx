@@ -21,7 +21,7 @@ export default function Navbar() {
         <nav style={!isDark ? { backgroundColor: "#fff" } : null}>
             <div className="left-nav">
                 <img className='logo' height={35} width={35} src={Logo} alt="..." />
-                <span style={!isDark ? { color: "#000" } : null}>CodeByte</span>
+                <span style={!isDark ? { color: "#000" } : null}>Codastic</span>
             </div>
             <div className='right-nav'>
                 <button onClick={() => setIsDark(!isDark)}>

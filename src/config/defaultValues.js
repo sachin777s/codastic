@@ -1,7 +1,5 @@
 const defaultValues = {
-  "html": `
-  
-  <div class="scene">
+  "html": `<div class="scene">
   <div class="cube">
     <div class="cube__face cube__face--front">Codebyte</div>
     <div class="cube__face cube__face--back">Codebyte</div>
@@ -32,10 +30,16 @@ const defaultValues = {
   </label>
 </p>
     `,
-  "css": `
-  * { box-sizing: border-box; }
+  "css": `* { 
+    box-sizing: border-box; 
+  }
 
-  body { font-family: sans-serif; }
+  body {    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+     font-family: sans-serif; 
+    }
   
   .scene {
     width: 200px;
@@ -95,8 +99,7 @@ const defaultValues = {
     flex-wrap:wrap;
   }
     `,
-  "javascript": `
-  var cube = document.querySelector('.cube');
+  "javascript": `var cube = document.querySelector('.cube');
   var radioGroup = document.querySelector('.radio-group');
   var currentClass = '';
   

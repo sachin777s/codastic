@@ -6,6 +6,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     background-color: #0f0a21;
+    box-shadow: 0 0 14px -5px #565657;
 }
 
 .left-nav {
@@ -17,6 +18,12 @@ nav {
 .left-nav>span {
     font-size: 1.3rem;
     font-weight: bold;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .right-nav>button {

@@ -6,6 +6,7 @@ import { IoLogoCss3 } from "react-icons/io";
 import { IoLogoJavascript } from 'react-icons/io';
 import { RiFullscreenFill, RiFullscreenExitLine } from "react-icons/ri"
 import LanguageContext from '../../context/LanguageContext/LanaugeContext';
+import ThemeContext from '../../context/ThemeContext/ThemeContext';
 
 export default function Editor() {
 
@@ -19,6 +20,7 @@ export default function Editor() {
     ]
 
     const [isFullScreen, setIsFullScreen] = useState(false);
+    const { isDark} = useContext(ThemeContext)
 
     //Editor value change handler
     const handleEditorChange = (editorValue, event) => {
@@ -74,7 +76,7 @@ export default function Editor() {
                     language={language}
                     defaultValue={html}
                     value={values[language]}
-                    theme='vs-dark'
+                    theme={isDark ? 'vs-dark' : ''}
                     onChange={handleEditorChange}
                 />
             </div>

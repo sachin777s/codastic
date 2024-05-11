@@ -1,4 +1,4 @@
-nav{
+nav {
     width: 100%;
     height: 44px;
     padding: 0 1rem;
@@ -8,13 +8,28 @@ nav{
     background-color: #0f0a21;
 }
 
-.left-nav{
+.left-nav {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-.left-nav > span{
+.left-nav>span {
     font-size: 1.3rem;
     font-weight: bold;
+}
+
+.right-nav>button {
+    padding: 4px 12px;
+    border-radius: 1rem;
+    color: #fff;
+    background-color: #252035;
+    font-size: 1.2rem;
+    outline: none;
+    border: 0;
+    transition: all 0.3s;
+}
+
+.right-nav>button:hover {
+    box-shadow: 0 0 9px -3px #fff;
 }

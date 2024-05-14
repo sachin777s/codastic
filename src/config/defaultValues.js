@@ -1,12 +1,12 @@
 const defaultValues = {
   "html": `<div class="scene">
   <div class="cube">
-    <div class="cube__face cube__face--front">Codebyte</div>
-    <div class="cube__face cube__face--back">Codebyte</div>
-    <div class="cube__face cube__face--right">CodeByte</div>
-    <div class="cube__face cube__face--left">CodeByte</div>
-    <div class="cube__face cube__face--top">CodeByte</div>
-    <div class="cube__face cube__face--bottom">CodeByte</div>
+    <div class="cube__face cube__face--front">Codastic</div>
+    <div class="cube__face cube__face--back">Codastic</div>
+    <div class="cube__face cube__face--right">Codastic</div>
+    <div class="cube__face cube__face--left">Codastic</div>
+    <div class="cube__face cube__face--top">Codastic</div>
+    <div class="cube__face cube__face--bottom">Codastic</div>
   </div>
 </div>
 <p class="radio-group">
